@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace WebApplication1.Migrations
 {
-    public partial class InitialMigrations : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,8 +15,10 @@ namespace WebApplication1.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Date = table.Column<DateTime>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
                     IsDone = table.Column<bool>(nullable: false),
-                    Title = table.Column<string>(nullable: true)
+                    UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

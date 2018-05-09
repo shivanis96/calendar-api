@@ -11,11 +11,11 @@ namespace WebApplication1.Controller
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-    public class TodosController : ControllerBase
+    public class CalendarController : ControllerBase
     {
         private readonly TodoContext _context;
 
-        public TodosController(TodoContext context)
+        public CalendarController(TodoContext context)
         {
             _context = context;
         }

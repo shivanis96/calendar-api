@@ -1,0 +1,11 @@
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\CalendarAPI.csprojResolveAssemblyReference.cache
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\CalendarAPI.csproj.CoreCompileInputs.cache
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\CalendarAPI.AssemblyInfoInputs.cache
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\CalendarAPI.AssemblyInfo.cs
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\CalendarAPI.deps.json
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\CalendarAPI.runtimeconfig.json
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\CalendarAPI.runtimeconfig.dev.json
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\CalendarAPI.dll
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\CalendarAPI.pdb
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\CalendarAPI.dll
+C:\Users\shiva\calendar\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\CalendarAPI.pdb

@@ -25,9 +25,13 @@ namespace WebApplication1.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("Description");
+
                     b.Property<bool>("IsDone");
 
-                    b.Property<string>("Title");
+                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 

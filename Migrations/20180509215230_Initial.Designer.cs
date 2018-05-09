@@ -11,8 +11,8 @@ using WebApplication1.Data;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(TodoContext))]
-    [Migration("20180422173406_InitialMigrations")]
-    partial class InitialMigrations
+    [Migration("20180509215230_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,9 +26,13 @@ namespace WebApplication1.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("Description");
+
                     b.Property<bool>("IsDone");
 
-                    b.Property<string>("Title");
+                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
