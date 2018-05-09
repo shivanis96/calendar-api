@@ -11,6 +11,6 @@ namespace WebApplication1.Data
         public int UserId { get; set; }
         public string Description { get; set; }
         public bool IsDone { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Pubdate { get; set; }
     }
 }

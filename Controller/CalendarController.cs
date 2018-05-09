@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,8 @@ namespace WebApplication1.Controller
     {
         private readonly TodoContext _context;
 
+        // private static readonly Expression<Func<Todo>>
+
         public CalendarController(TodoContext context)
         {
             _context = context;
@@ -26,6 +29,15 @@ namespace WebApplication1.Controller
         {
             return _context.Todos;
         }
+
+        [Route("month/{pubdate:datetime}")]
+        [HttpGet]
+        public IQueryable<Todo> GetMonth(DateTime pubdate)
+        {
+            return _context.Todos.Include(b => b.Id)
+                .Where(b =>  b.Pubdate == pubdate.Date);
+        }
+        
 
         // GET: api/Todos/5
         [HttpGet("{id}")]
@@ -45,6 +57,8 @@ namespace WebApplication1.Controller
 
             return Ok(todo);
         }
+        
+
 
         // PUT: api/Todos/5
         [HttpPut("{id}")]

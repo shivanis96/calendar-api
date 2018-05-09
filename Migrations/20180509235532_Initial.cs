@@ -15,9 +15,9 @@ namespace WebApplication1.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    Date = table.Column<DateTime>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     IsDone = table.Column<bool>(nullable: false),
+                    Pubdate = table.Column<DateTime>(nullable: false),
                     UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
