@@ -10,7 +10,7 @@ namespace WebApplication1.Data
     {
         public TodoContext(DbContextOptions<TodoContext> options) : base (options)
         {
-
+           
         }
 
         public DbSet<Todo> Todos { get; set; }

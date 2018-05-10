@@ -16,28 +16,51 @@ namespace WebApplication1.Controller
     {
         private readonly TodoContext _context;
 
-        // private static readonly Expression<Func<Todo>>
+        private static readonly Expression<Func<Todo, Todo>> AsTodo =
+            x => new Todo
+            {
+                Id = x.Id,
+                UserId = x.UserId,
+                Description = x.Description,
+                IsDone = x.IsDone,
+                Pubdate = x.Pubdate
+            };
 
         public CalendarController(TodoContext context)
         {
             _context = context;
         }
 
-        // GET: api/Todos
+        // GET: api/calendar - Get all calendar entries
         [HttpGet]
         public IEnumerable<Todo> GetTodos()
         {
             return _context.Todos;
         }
 
+
+        [Route("/{pubdate:datetime}")]
+        [HttpGet]
+        public IQueryable<Todo> GetDayEntries(DateTime pubdate)
+        {
+            var x = _context.Todos.Where(b =>  b.Pubdate.Date == pubdate.Date)
+                .Select(AsTodo);
+            return x;
+        }
+
         [Route("month/{pubdate:datetime}")]
         [HttpGet]
-        public IQueryable<Todo> GetMonth(DateTime pubdate)
+        public IQueryable<Todo> GetMonthEntries(DateTime pubdate)
         {
-            return _context.Todos.Include(b => b.Id)
-                .Where(b =>  b.Pubdate == pubdate.Date);
+            var firstDayOfMonth = new DateTime(pubdate.Year, pubdate.Month, 1);
+            var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+            var x = _context.Todos.Where(b =>  (b.Pubdate.Date >= firstDayOfMonth) && (b.Pubdate.Date <=lastDayOfMonth))
+                .Select(AsTodo);
+            return x;
         }
-        
+
+
 
         // GET: api/Todos/5
         [HttpGet("{id}")]
